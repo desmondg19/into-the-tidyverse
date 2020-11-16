@@ -250,9 +250,14 @@ Exercise 3: In the `Data` folder, there is a dataset listing all of the [bank lo
 Example
 
 ```{r}
-bank_branches<-read.table("https://catalog.data.gov/dataset/bank-branches-data/resource/769ef747-f5b8-4154-846e-2f347d45a7ce")
+bank_branches<-here('Data',"BankBranchesData.txt")%>%
+  read_tsv()
 ```
-
+here function -> already on computer, tells you where to go in the directory
+tsv -> type of data, tabs (how to handle the data)
+```{r}
+bank_branches1<-read_tsv("Data/BankBranchesData.txt")
+```
 
 
 
