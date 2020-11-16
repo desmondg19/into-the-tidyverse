@@ -230,7 +230,6 @@ is.numeric(tidy_read_mod$ZIP_POSTAL)
 
 
 ```
-```
 
 
 Exercise 2: The Johns Hopkins covid-19 tracker maintains the latest count of confirmed coronavirus cases in the U.S. at the following URL: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv`. *Without downloading the file to your hard drive*, read it into R, and assign it to a variable named `covid_usa`.
@@ -241,8 +240,7 @@ library(tidyverse)
 
 
 ```{r}
-covid_usa<- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv")
-
+covid_usa<-read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv")
 ```
 
 
@@ -250,3 +248,16 @@ covid_usa<- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/
 
 Exercise 3: In the `Data` folder, there is a dataset listing all of the [bank locations in Louisville, KY](https://catalog.data.gov/dataset/bank-branches-data/resource/769ef747-f5b8-4154-846e-2f347d45a7ce). The file name is `BankBranchesData.txt`. Read this dataset into R and assign it to a variable named `bank_branches`.
 Example
+
+```{r}
+bank_branches<-read.table("https://catalog.data.gov/dataset/bank-branches-data/resource/769ef747-f5b8-4154-846e-2f347d45a7ce")
+```
+
+
+
+
+
+
+
+
+
