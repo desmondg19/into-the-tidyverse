@@ -42,11 +42,19 @@ Last time, you installed a few libraries that are particularly important. Here's
 `install.packages("here")`  
 `install.packages("janitor")`
 
+
 We're going to install one new library, which we'll use in just a moment. You should type this into your console, rather than your script.
 
 ```{r eval = FALSE}
 install.packages("tictoc")
+install.packages("janitor")
+
 ```
+```{r}
+install.packages("here")
+```
+
+
 
 In this series, we'll be making heavy use of the `tidyverse`. The tidyverse is not a single library, but a *collection* of libraries that are designed to work well together. When you get good at using R, you'll load the entire tidyverse at once because you'll know how to use all of the individual libraries in conjunction. However, since we're learning how each library works, we'll load only specific libraries related to specific goals.
 
@@ -211,8 +219,34 @@ tidy_read_mod <- here("Data", "PVD_2020_Property_Tax_Roll.csv") %>%
 A general note: these are hard exercises, and you won't necessarily find the answers in this tutorial. Learning to Google (or, if you really care about privacy, [DuckDuckGo](https://duckduckgo.com/)) answers to your coding questions is itself an essential skill. So, be patient with yourself. Struggling through these exercises will help you understand this material at a deeper level.
 
 Exercise 1: Verify that `tidy_read_mod` read the columns `plat` and `ZIP_POSTAL` as strings.
+```{r}
+this_plot<-tidy_read_mod$plot
+
+is.character(tidy_read_mod$plot)
+is.numeric(tidy_read_mod$pot)
+is.character(tidy_read_mod$ZIP_POSTAL)
+is.numeric(tidy_read_mod$ZIP_POSTAL)
+
+
+
+```
+```
+
 
 Exercise 2: The Johns Hopkins covid-19 tracker maintains the latest count of confirmed coronavirus cases in the U.S. at the following URL: `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv`. *Without downloading the file to your hard drive*, read it into R, and assign it to a variable named `covid_usa`.
 
-Exercise 3: In the `Data` folder, there is a dataset listing all of the [bank locations in Louisville, KY](https://catalog.data.gov/dataset/bank-branches-data/resource/769ef747-f5b8-4154-846e-2f347d45a7ce). The file name is `BankBranchesData.txt`. Read this dataset into R and assign it to a variable named `bank_branches`.
+```{r}
+library(tidyverse)
+```
 
+
+```{r}
+covid_usa<- read.csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv")
+
+```
+
+
+
+
+Exercise 3: In the `Data` folder, there is a dataset listing all of the [bank locations in Louisville, KY](https://catalog.data.gov/dataset/bank-branches-data/resource/769ef747-f5b8-4154-846e-2f347d45a7ce). The file name is `BankBranchesData.txt`. Read this dataset into R and assign it to a variable named `bank_branches`.
+Example
